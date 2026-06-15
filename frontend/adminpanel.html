@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="adminpanel.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <img src="icon/logo.svg" alt="ТСПК" class="sidebar-logo">
+                <h2>Управление</h2>
+                <p>Работодатели</p>
+            </div>
+            <nav class="admin-nav">
+                <a href="index.html" target="_blank" class="nav-link">↗ Открыть главную</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Панель управления работодателями</h1>
+                <p>Добавляйте, редактируйте или удаляйте карточки компаний — изменения сразу отображаются на сайте</p>
+            </header>
+
+            <div class="card-form" id="employerForm">
+                <h3 id="formTitle">Добавить работодателя</h3>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Название компании *</label>
+                        <input type="text" id="brand" placeholder="например: Ростсайт" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Контактное лицо *</label>
+                        <input type="text" id="person" placeholder="Иванов Иван Иванович" required>
+                    </div>
+                    <div class="form-field full-width">
+                        <label>Описание деятельности</label>
+                        <textarea id="description" rows="2" placeholder="Краткое описание компании и предложений для студентов..."></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label>Сайт (ссылка)</label>
+                        <input type="url" id="link" placeholder="https://example.com">
+                    </div>
+                    <div class="form-field">
+                        <label>Путь к логотипу</label>
+                        <input type="text" id="logo" placeholder="icon/logoros.svg">
+                        <small>Относительный путь (например: icon/logo.svg)</small>
+                    </div>
+                    <div class="form-field full-width">
+                        <label>Направления / основные теги (выберите из списка)</label>
+                        <div class="tags-checkbox-group" id="tagsCheckboxes"></div>
+                        
+                        <span class="extra-tags-label">Дополнительные теги (список)</span>
+                        <div class="dynamic-tags-list" id="dynamicTagsContainer"></div>
+                        <div class="add-tag-group">
+                            <input type="text" id="newTagInput" class="add-tag-input" placeholder="Новый тег, например: 1С, Обучение" autocomplete="off">
+                            <button type="button" id="addTagBtn" class="add-tag-btn">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" onclick="createEmployer()" id="saveBtn">Сохранить</button>
+                    <button class="btn btn-secondary" id="cancelEditBtn">Отмена</button>
+                </div>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+
+            <div class="employers-list-header">
+                <h2>Список работодателей</h2>
+                <span class="counter" id="employersCount">0 компаний</span>
+            </div>
+            <div class="employers-grid" id="employersGrid">
+                <div class="loading-placeholder">Загрузка...</div>
+            </div>
+        </main>
+    </div>
+    <script src="adminpanel.js"></script>
+</body>
+</html>

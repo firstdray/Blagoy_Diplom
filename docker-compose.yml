@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: xkiller
+      POSTGRES_PASSWORD: dima
+      POSTGRES_DB: career_tspk
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U xkiller -d career_tspk"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PG_HOST=postgres
+      - PG_USER=xkiller
+      - PG_PASSWORD=dima
+      - PG_DATABASE=career_tspk
+      - PG_PORT=5432
+      - SESSION_SECRET=${SESSION_SECRET}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+volumes:
+  postgres_data:

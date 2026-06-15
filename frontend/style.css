@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.head {
+    padding: 30px;
+    background-color: #141414;
+    flex-shrink: 0;
+}
+
+.foot {
+    padding: 30px;
+    background-color: #141414;
+    flex-shrink: 0;
+}
+
+.text-head {
+    color: white;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.tc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 16px;
+}
+
+.hd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.ft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mess {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.search-wrap {
+    width: 100%;
+    max-width: 520px;
+    height: 46px;
+    background: #fff;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    padding: 0 8px 0 10px;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font-size: 17px;
+    color: #222;
+    min-width: 0;
+}
+
+.search-input::placeholder {
+    color: #b7b7b7;
+}
+
+.search-btn {
+    height: 34px;
+    border: 0;
+    border-radius: 3rem;
+    background: linear-gradient(180deg, #3b86ff 0%, #1976ff 100%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 24px;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.search-btn:hover {
+    filter: brightness(1.03);
+}
+
+.t-vac {
+    color: white;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.employers {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    max-width: 410px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 2rem;
+    box-shadow: 0 25px 45px 10px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    justify-content: space-around;
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-head {
+    display: flex;
+}
+
+.card-logo{
+    background: #f8fafc;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-shrink: 0;
+    border: 1px solid #eef2ff;
+}
+
+.person {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #494949;
+    margin-bottom: 1.8rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    background: #F8FAFE;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+    justify-content: flex-start;
+}
+
+.tag-badge {
+    border-radius: 60px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background: #dde4fd;
+}
+
+.employer-link {
+    display: inline-flex;
+    background: #2786FF;
+    color: white;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border-radius: 2.5rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+}
+
+.employer-link:hover {
+    background: linear-gradient(#18719d);
+    transform: translateY(-2px);
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 1;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    min-width: 260px;
+}
+
+.variants,
+.Specialization,
+.cooperation,
+.check {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.custom-checkbox {
+    display: inline-flex;
+    gap: 8px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.custom-checkbox:hover input:not(:checked) ~ .checkmark {
+    border-color: #888;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox input:focus-visible ~ .checkmark {
+    outline: 2px solid #2196F3;
+    outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+    .head,
+    .foot {
+        padding: 24px 16px;
+    }
+
+    .filter {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hd {
+        gap: 2rem;
+    }
+
+    .employers {
+        margin: 1rem;
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 1.5rem;
+    }
+
+    .brand {
+        font-size: 1.6rem;
+    }
+
+    .person {
+        font-size: 1.05rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .search-wrap {
+        height: 44px;
+    }
+
+    .search-input {
+        font-size: 16px;
+    }
+
+    .search-btn {
+        padding: 0 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .head,
+    .foot {
+        padding: 18px 12px;
+    }
+
+    .tc {
+        padding: 0 10px;
+    }
+
+    .search-wrap {
+        height: 42px;
+        border-radius: 2rem;
+    }
+
+    .search-btn {
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 1.25rem 1rem;
+    }
+
+    .services {
+        gap: 0.5rem;
+    }
+
+    .tag-badge {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .employer-link {
+        width: 100%;
+    }
+
+    .t-vac {
+        gap: 8px;
+        font-size: 0.95rem;
+    }
+}
